@@ -35,7 +35,10 @@ public class AppConfig {
       dataSource.setPassword(env.getProperty("db.password"));
       return dataSource;
    }
-
+   /*
+   Основная функция класса LocalSessionFactoryBean - включение hibernate SessionFactory в контейнер Spring.
+   Spring будет управлять SessionFactory. Мы также можем полагаться на внедрение SessionFactory.
+    */
    @Bean
    public LocalSessionFactoryBean getSessionFactory() {
       LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
